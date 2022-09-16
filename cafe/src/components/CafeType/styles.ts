@@ -9,6 +9,7 @@ export const Cafe = styled.div`
  align-items: center;
  max-width: 16rem;
  border-top-right-radius: 15%;
+ border-bottom-left-radius: 15%;
  img{
   max-width: 400px;
   margin-top:-1.25rem;
@@ -44,6 +45,7 @@ export const Preco = styled.div`
 export const CardFinal = styled.div`
   display: flex;
   align-items: center;
+  border-radius: 4px;
   gap: 0.4rem;
   div{
     display: flex;
@@ -52,6 +54,7 @@ export const CardFinal = styled.div`
     button{
       background-color: ${props=> props.theme["base-button"]};
       padding: 0.5rem;
+      color: ${props=> props.theme["purple"]};
       cursor: pointer;
       outline: none;
       border: none;
@@ -59,7 +62,6 @@ export const CardFinal = styled.div`
   }
   div:first-child{
     background-color: ${props=> props.theme["base-button"]};
-    border-radius: 8px;
   }
 `
 export const CartButton = styled.button`
@@ -69,4 +71,8 @@ export const CartButton = styled.button`
     padding: 0.5rem;
     border: none;
     cursor: pointer;
+    transition: all 0.4s ease;
+    :hover{
+      background-color: ${props=> props.theme["purple"]};
+    }
 `

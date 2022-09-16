@@ -1,4 +1,4 @@
-import { AdressForm, CheckoutInfos, CoffeInfos, First, HeaderForm, PlusLessButton, LayoutCheckout, DefaultButton, PaymentForm, RightCard, Second, TypePayment } from "./styles";
+import { AdressForm, CheckoutInfos, CoffeInfos, First, HeaderForm, PlusLessButton, LayoutCheckout, DefaultButton, PaymentForm, RightCard, Second, TypePayment, Valor, ValuesInfo } from "./styles";
 import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money, Minus, Plus, Trash } from "phosphor-react";
 import cafeExpresso from '../../assets/expressoTradicional.png'
 
@@ -93,12 +93,29 @@ export function Checkout(){
           <div>
             <p>Expresso Tradicional</p>
             <p>
-              <PlusLessButton><span><Minus size={14}/></span> 1 <span><Plus size={14}/></span></PlusLessButton>
-              <DefaultButton><span><Trash size={14}/></span></DefaultButton>
+              <PlusLessButton><button><Minus size={14}/></button> 1 <button><Plus size={14}/></button></PlusLessButton>
+              <DefaultButton><button><Trash size={14}/><span>REMOVER</span></button></DefaultButton>
             </p>          
           </div>
-          <div>R$ <span>9,90</span></div>
+          <Valor>R$ <span>9,90</span></Valor>
         </CoffeInfos>
+        <CoffeInfos>
+          <img src={cafeExpresso} alt="" />
+          <div>
+            <p>Expresso Tradicional</p>
+            <p>
+              <PlusLessButton><button><Minus size={14}/></button> 1 <button><Plus size={14}/></button></PlusLessButton>
+              <DefaultButton><button><Trash size={14}/><span>REMOVER</span></button></DefaultButton>
+            </p>          
+          </div>
+          <Valor>R$ <span>19,90</span></Valor>
+        </CoffeInfos>
+        <ValuesInfo>
+          <p><span>Total de itens</span> <span>R$ 29,99</span></p>
+          <p><span>Entrega</span> <span>R$ 9,99</span></p>
+          <div><span>Total</span> <span>R$39,98</span></div>
+          <button type="submit">CONFIRMAR PEDIDO</button>
+        </ValuesInfo>
       </RightCard>
       </div>
     </LayoutCheckout>
