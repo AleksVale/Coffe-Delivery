@@ -1,10 +1,12 @@
 import {ShoppingCart, Timer, Coffee, Package } from 'phosphor-react'
 import imagem from '../../assets/Imagem.png'
-import { Card, Card1, Card2, Card3, Card4, CardType, Intro, Title } from './style'
+import { CafeType } from '../../components/CafeType'
+import { Card, Card1, Card2, Card3, Card4, Intro, Title,Content } from './style'
 
 export function Home(){
 
   return(
+    <>
     <Intro>
       <div>
         <Title>
@@ -24,5 +26,20 @@ export function Home(){
       </div>
       <img src={imagem} alt="" />
     </Intro>
+    <Content>
+      <h1>Nossos cafés</h1>
+      <div>
+        <CafeType/>
+        <CafeType/>
+        <CafeType/>
+        <CafeType/>
+        <CafeType/>
+        <CafeType/>
+        <CafeType/>
+        <CafeType/>
+      </div>
+    </Content>
+    </>
+
   )
 }

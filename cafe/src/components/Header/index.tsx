@@ -5,10 +5,10 @@ export function Header(){
 
   return(
     <Head>
-        <img src={logo} alt="" />
+        <a href="/"><img src={logo} alt="" /></a>
         <nav>
           <span><MapPin size={22}  weight="fill" /> Porto Alegre, RS</span>
-          <a href="#"><ShoppingCart size={22}  weight="fill"/></a>
+          <a href="/checkout"><ShoppingCart size={22}  weight="fill"/></a>
         </nav>     
     </Head>
   )

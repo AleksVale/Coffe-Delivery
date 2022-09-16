@@ -10,7 +10,9 @@ export const defaultTheme = {
   'base-text': '#574f4d',
   'base-hover': '#d7d5d5',
   'base-button': '#e6e5e5',
+  'base-label': '#8d8686',
   'base-input': '#ededed',
+  'base-card': '#f3f2f2',
   'background':'#FAFAFA',
   'white':"#FFFFFF"
 }

@@ -55,3 +55,15 @@ export const Card3 = styled(CardType)`
 export const Card4 = styled(CardType)`
   background: ${props=> props.theme["purple"]};
 `
+export const Content = styled.div`
+  padding: 10rem; 
+  h1{
+    font-family: 'Baloo 2', cursive;
+    font-weight: 800;
+    font-size: 2rem;
+  }
+  div{
+    display: flex;
+    flex-wrap: wrap;
+  }
+`

@@ -22,7 +22,7 @@ export const Head = styled.header`
       padding:0.5rem;
       border-radius: 8px;
     }
-    a{
+    a:last-child{
       text-decoration: none;
       display: flex;
       align-items: center;
