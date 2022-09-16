@@ -132,9 +132,39 @@ export const TypePayment = styled.div`
       border-radius: 6px;
     }
     input{
-      /* visibility: hidden; */
-    }
-    input[type="radio"]:checked+label{
-      background-color: red;
+      visibility: hidden;
     }
 `
+
+//lado direito da página
+
+  export const RightCard = styled.div`
+    max-width: 40rem;
+    background-color: ${props=> props.theme['base-card']};
+    margin-top:1rem;
+    padding: 2.5rem;
+  `
+  export const CoffeInfos = styled.div`
+  display:flex;
+  gap: 1.25rem;
+  img{
+    max-width: 4rem;
+  }
+  `
+  export const DefaultButton = styled.button`
+    border: none;
+    padding: 0.6rem;
+    margin-top: 0.5rem;
+    font-size: 0.725rem;
+    background-color: ${props=> props.theme['base-button']};
+    vertical-align: middle;
+    border-radius:6px;
+    cursor: pointer;
+    span{
+      color: ${props=> props.theme['purple']};
+    }
+  `
+  export const PlusLessButton = styled(DefaultButton)`
+    margin-right: 1rem;
+    font-size: 1rem;
+  `
