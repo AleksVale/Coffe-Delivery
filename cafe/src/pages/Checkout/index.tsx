@@ -1,7 +1,45 @@
-import { AdressForm, CheckoutInfos, First, HeaderForm, LayoutCheckout, PaymentForm, Second, TypePayment } from "./styles";
-import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money } from "phosphor-react";
+import { AdressForm, CheckoutInfos, CoffeInfos, First, HeaderForm, PlusLessButton, LayoutCheckout, DefaultButton, PaymentForm, RightCard, Second, TypePayment } from "./styles";
+import { MapPinLine, CurrencyDollar, CreditCard, Bank, Money, Minus, Plus, Trash } from "phosphor-react";
+import cafeExpresso from '../../assets/expressoTradicional.png'
 
 export function Checkout(){
+  function isChecked(){
+    const cartao = document.getElementById('cartao') as HTMLInputElement
+    const  label1 = document.getElementById('cartaoLabel')
+
+    const debito = document.getElementById('debito') as HTMLInputElement
+    const  label2 = document.getElementById('debitoLabel')
+
+    const dinheiro = document.getElementById('dinheiro') as HTMLInputElement
+    const  label3 = document.getElementById('dinheiroLabel')
+    if (cartao.checked){
+    if (label3 != null && label2 != null && label1 != null){
+    label1.style.border = '1px solid purple'
+    label2.style.border = 'none'
+    label3.style.border = 'none'
+    } 
+    }
+   
+    if (debito.checked){
+      if (label3 != null && label2 != null && label1 != null){
+      label2.style.border = '1px solid purple'
+      label1.style.border = 'none'
+      label3.style.border = 'none'
+      } 
+      }
+       if (dinheiro.checked){
+    
+        if (label3 != null && label2 != null && label1 != null){
+        label3.style.border = '1px solid purple'
+        label1.style.border = 'none'
+        label2.style.border = 'none'
+        } 
+        }
+
+    
+  }
+
+
 
   return(
     <LayoutCheckout>
@@ -27,26 +65,42 @@ export function Checkout(){
             </PaymentForm>
             <TypePayment>
               <div>
-               <label htmlFor="cartao"><span><CreditCard size={20} weight="thin" /></span>
+               <label htmlFor="cartao" id="cartaoLabel"><span><CreditCard size={20} weight="thin" /></span>
                 CARTÃO DE CRÉDITO</label>
-                <input type="radio" id="cartao" value="cartao" name="pagamento"/>
+                <input onChange={isChecked} type="radio" id="cartao" value="cartao" name="pagamento"/>
               </div>
               <div>
-               <label htmlFor="debito"><span><Bank size={20} weight="thin" /></span>
+               <label id="debitoLabel" htmlFor="debito"><span><Bank size={20} weight="thin" /></span>
                 CARTÃO DE DÉBITO</label>
-                <input type="radio" id="debito" value="debito" name="pagamento"/>
+                <input onChange={isChecked}  type="radio" id="debito" value="debito" name="pagamento"/>
               </div>
               <div>
-               <label htmlFor="dinheiro"><span><Money size={20} weight="thin" /></span>
+               <label id="dinheiroLabel" htmlFor="dinheiro"><span><Money size={20} weight="thin" /></span>
                 DINHEIRO</label>
-                <input type="radio" id="dinheiro" value="dinheiro" name="pagamento"/>
+                <input onChange={isChecked} type="radio" id="dinheiro" value="dinheiro" name="pagamento"/>
               </div>
             </TypePayment>
           </Second>
         </CheckoutInfos>
-        
       </div>
-      <div>mundo</div>
+      <div>
+      
+       <h3>Cafés selecionados</h3>
+      
+      <RightCard>
+        <CoffeInfos>
+          <img src={cafeExpresso} alt="" />
+          <div>
+            <p>Expresso Tradicional</p>
+            <p>
+              <PlusLessButton><span><Minus size={14}/></span> 1 <span><Plus size={14}/></span></PlusLessButton>
+              <DefaultButton><span><Trash size={14}/></span></DefaultButton>
+            </p>          
+          </div>
+          <div>R$ <span>9,90</span></div>
+        </CoffeInfos>
+      </RightCard>
+      </div>
     </LayoutCheckout>
   )
 }
