@@ -1,15 +1,26 @@
-import { Cafe, CardFinal, CartButton, Preco, Tag } from "./styles";
+import { Cafe, CardFinal, CartButton, Preco, Tag, Tags } from "./styles";
 import {Minus, Plus, ShoppingCart } from 'phosphor-react'
-import expressoTradicional from '../../assets/expressoTradicional.png'
 
-export function CafeType(){
+interface cafeProps{
+  'image': string,
+  'tags': string[],
+  'name': string,
+  'description': string,
+}
+
+export function CafeType(props : cafeProps){
 
   return(
     <Cafe>
-      <img src={expressoTradicional}></img>
-      <Tag>TRADICIONAL</Tag>
-      <h3>Expresso Tradicional</h3>
-      <p>O tradicional café feito com água quente e grãos moídos</p>
+      <img src={props.image}></img>
+      <Tags>
+        {props.tags.map(tag => (
+          <Tag>{tag}</Tag>
+        ))}
+      </Tags>
+      
+      <h3>{props.name}</h3>
+      <p>{props.description}</p>
       <Preco>
         <div>R$ <span>9,90</span></div>
         <CardFinal>

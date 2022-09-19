@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Cafe = styled.div`
  background: ${props=> props.theme["base-card"]};
- padding: 0 1.5rem 1rem;
- margin: 3.375rem 1.5rem 3.375rem 0;
+ padding: 0 1.1rem 0.5rem;
+ margin: 3.375rem 1.5rem 3rem 0;
  display:flex;
  flex-direction: column;
  align-items: center;
@@ -27,11 +27,17 @@ export const Cafe = styled.div`
   margin-bottom: 2rem;
  }
 `
+export const Tags = styled.div`
+ display: flex;
+ margin: 0.725rem 1rem;
+ gap: 4px;
+ flex-wrap: nowrap;
+`
 export const Tag = styled.span`
   color: ${props=> props.theme["yellow-dark"]};
   background-color: ${props=> props.theme["yellow-light"]};
   padding: 4px 8px;
-  margin: 0.725rem 1rem;
+  
   font-weight: 800;
   font-size: 0.625rem;
   border-radius: 100px;
