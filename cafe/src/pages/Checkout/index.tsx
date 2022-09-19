@@ -93,8 +93,8 @@ export function Checkout(){
           <div>
             <p>Expresso Tradicional</p>
             <p>
-              <PlusLessButton><button><Minus size={14}/></button> 1 <button><Plus size={14}/></button></PlusLessButton>
-              <DefaultButton><button><Trash size={14}/><span>REMOVER</span></button></DefaultButton>
+              <PlusLessButton><span><Minus size={14}/></span> 1 <span><Plus size={14}/></span></PlusLessButton>
+              <DefaultButton><span><Trash size={14}/></span> REMOVER</DefaultButton>
             </p>          
           </div>
           <Valor>R$ <span>9,90</span></Valor>
