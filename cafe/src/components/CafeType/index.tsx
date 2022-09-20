@@ -1,44 +1,27 @@
 import { Cafe, CardFinal, CartButton, Preco, Tag, Tags } from "./styles";
 import {Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { useState } from "react";
-
+interface cafe{
+  'name': string,
+  'quantidadeCafe': number,
+  'valor': number
+}
 interface cafeProps{
   'image': string,
   'tags': string[],
   'name': string,
   'description': string,
+  'adicionarCarrinho': (cafe:cafe) => void
 }
 
 export function CafeType(props : cafeProps){
-  interface coffesType {
-    'name': string,
-    'quantidade': number,
-    'value': number,
-  }
   const [quantidadeCafe, setQuantidadeCafe] = useState(1)
-  const [coffesToBuy, setCoffesToBuy] = useState([{}])
-
   const esseCafe = {
     'name': props.name,
     'quantidade': quantidadeCafe,
     'value': 9.90
   }
 
-  function adicionaAsCompras(){
-  const newCoffes = [...coffesToBuy, esseCafe]
-  setCoffesToBuy(newCoffes)
-  const carrinho = localStorage.getItem('carrinhoCafeRocket')
-  console.log(carrinho)
-  console.log(coffesToBuy)
-  if(carrinho==null){
-    localStorage.setItem('carrrinhoCafeRocket', JSON.stringify(coffesToBuy))
-  }
-  else{
-    const novoCarrinho = JSON.parse(carrinho).concat(coffesToBuy)
-    localStorage.setItem('carrinhoCafeRocket', JSON.stringify(novoCarrinho))
-  }
-  console.log(carrinho)
-  }
 
   
 
@@ -69,7 +52,7 @@ export function CafeType(props : cafeProps){
         <div>
          <button onClick={diminuiCafe}><Minus/></button><span>{quantidadeCafe}</span><button onClick={aumentaCafe}><Plus/></button>
         </div>
-        <CartButton onClick={adicionaAsCompras}>
+        <CartButton onClick={aumentaCafe}>
          <ShoppingCart size={22} weight="fill" />
         </CartButton>
         </CardFinal>

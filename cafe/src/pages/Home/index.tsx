@@ -21,9 +21,15 @@ import { useState } from 'react'
 
 
 export function Home(){
+  const [coffesToBuy, setCoffesToBuy] = useState([{}])
+  interface cafe{
+    'name': string,
+    'quantidadeCafe': number,
+    'valor': number
+  }
+  const addToCart = (esseCafe: cafe) => {
 
-
-
+  }
 
   return(
     <>
@@ -49,20 +55,20 @@ export function Home(){
     <Content>
       <h1>Nossos cafés</h1>
       <div>
-        <CafeType image = {expressoTradicional} tags={['Tradicional']} name='Expresso Tradicional' description='O tradicional café feito com água quente e grãos moídos'/>
-        <CafeType image = {expressoAmericano} tags={['Tradicional']} name='Expresso Americano' description='Expresso diluído, menos intenso que o original'/>
-        <CafeType image = {expressoCremoso} tags={['Tradicional']} name='Expresso Cremoso' description='Café expresso tradicional com espuma cremosa'/>
-        <CafeType image = {expressoGelado} tags={['Tradicional','Gelado']} name='Expresso Gelado' description='Bebida preparada com café expresso e cubos de gelo'/>
-        <CafeType image = {cafeLeite} tags={['Tradicional','COM LEITE']} name='Café com Leite' description='Meio a meio de expresso tradicional com leite vaporizado'/>
-        <CafeType image = {latte} tags={['Tradicional','COM LEITE']} name='Latte' description='Uma dose de expresso com o dobro de leite e espuma cremosa'/>
-        <CafeType image = {capuccino} tags={['Tradicional','COM LEITE']} name='Capuccino' description='Bebida de canela feita de doses iguais de café, leite e espuma'/>
-        <CafeType image = {machiatto} tags={['Tradicional','COM LEITE']} name='Machiatto' description='Café expresso misturado com um pouco de leite quente e espuma'/>
-        <CafeType image = {mocaccino} tags={['Tradicional','COM LEITE']} name='Mocaccino' description='Café expresso com calda de chocolate, pouco leite e espuma'/>
-        <CafeType image = {chocolateQuente} tags={['Especial','COM LEITE']} name='Chocolate Quente' description='Bebida feita com chocolate dissolvido no leite quente e café'/>
-        <CafeType image = {cubano} tags={['Especial', 'ALCOÓLICO','GELADO']} name='Cubano' description='Drink gelado de café expresso com rum,creme de leite e hortelã'/>
-        <CafeType image = {havaiano} tags={['Especial']} name='Havaiano' description='Bebida adocicada preparada com café e leite de coco'/>
-        <CafeType image = {arabe} tags={['Especial']} name='Árabe' description='Bebida preparada com grãos de café árabe e especiarias'/>
-        <CafeType image = {irlandes} tags={['Especial','ALCOÓLICO']} name='Árabe' description='Bebida a base de café, uísque irlândes,açucar e chantilly'/>
+        <CafeType adicionarCarrinho={addToCart} image = {expressoTradicional} tags={['Tradicional']} name='Expresso Tradicional' description='O tradicional café feito com água quente e grãos moídos'/>
+        <CafeType adicionarCarrinho={addToCart} image = {expressoAmericano} tags={['Tradicional']}  name='Expresso Americano' description='Expresso diluído, menos intenso que o original'/>
+        <CafeType adicionarCarrinho={addToCart} image = {expressoCremoso} tags={['Tradicional']} name='Expresso Cremoso' description='Café expresso tradicional com espuma cremosa'/>
+        <CafeType adicionarCarrinho={addToCart} image = {expressoGelado} tags={['Tradicional','Gelado']} name='Expresso Gelado' description='Bebida preparada com café expresso e cubos de gelo'/>
+        <CafeType adicionarCarrinho={addToCart} image = {cafeLeite} tags={['Tradicional','COM LEITE']} name='Café com Leite' description='Meio a meio de expresso tradicional com leite vaporizado'/>
+        <CafeType adicionarCarrinho={addToCart} image = {latte} tags={['Tradicional','COM LEITE']} name='Latte' description='Uma dose de expresso com o dobro de leite e espuma cremosa'/>
+        <CafeType adicionarCarrinho={addToCart} image = {capuccino} tags={['Tradicional','COM LEITE']} name='Capuccino' description='Bebida de canela feita de doses iguais de café, leite e espuma'/>
+        <CafeType adicionarCarrinho={addToCart} image = {machiatto} tags={['Tradicional','COM LEITE']} name='Machiatto' description='Café expresso misturado com um pouco de leite quente e espuma'/>
+        <CafeType adicionarCarrinho={addToCart} image = {mocaccino} tags={['Tradicional','COM LEITE']} name='Mocaccino' description='Café expresso com calda de chocolate, pouco leite e espuma'/>
+        <CafeType adicionarCarrinho={addToCart} image = {chocolateQuente} tags={['Especial','COM LEITE']} name='Chocolate Quente' description='Bebida feita com chocolate dissolvido no leite quente e café'/>
+        <CafeType adicionarCarrinho={addToCart} image = {cubano} tags={['Especial', 'ALCOÓLICO','GELADO']} name='Cubano' description='Drink gelado de café expresso com rum,creme de leite e hortelã'/>
+        <CafeType adicionarCarrinho={addToCart} image = {havaiano} tags={['Especial']} name='Havaiano' description='Bebida adocicada preparada com café e leite de coco'/>
+        <CafeType adicionarCarrinho={addToCart} image = {arabe} tags={['Especial']} name='Árabe' description='Bebida preparada com grãos de café árabe e especiarias'/>
+        <CafeType adicionarCarrinho={addToCart} image = {irlandes} tags={['Especial','ALCOÓLICO']} name='Árabe' description='Bebida a base de café, uísque irlândes,açucar e chantilly'/>
 
 
 
